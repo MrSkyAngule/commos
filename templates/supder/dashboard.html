@@ -1,0 +1,11 @@
+<head>
+    <title>Commos</title>
+</head>
+<h1>Ваши сообщения</h1>
+<ul>
+    {% for commo in commos %}
+        <li>{{ commo.data }} Times: {{ commo.created_at }}
+            Автор: {{ commo.device_id }}
+        </li>
+    {% endfor %}
+</ul>
