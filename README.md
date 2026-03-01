@@ -2,42 +2,14 @@
 
 Django REST API проект для приёма и отображения сообщений от устройств.
 
-## Стек
+## Используемые технологии
 
 - Python 3
 - Django 6.0.2
 - Django REST Framework 3.16.1
 - PostgreSQL
-- Tkinter (GUI-клиент)
-
-## Структура проекта
-
-```
-supder/          — настройки Django-проекта
-commo/           — модель Commo (device_id, data, created_at)
-apis/            — REST API (ViewSet + Serializer)
-web_apps/        — веб-интерфейс (дашборд)
-templates/       — HTML-шаблоны
-apps.py          — GUI-клиент для отправки данных через POST
-```
-
-## API эндпоинты
-
-| Метод    | URL                      | Описание              |
-|----------|--------------------------|-----------------------|
-| GET      | `/api/api/messages/`     | Список всех сообщений |
-| POST     | `/api/api/messages/`     | Создать сообщение     |
-| GET      | `/api/api/messages/{id}/`| Получить по ID        |
-| PUT      | `/api/api/messages/{id}/`| Обновить              |
-| DELETE   | `/api/api/messages/{id}/`| Удалить               |
-
-Формат тела POST-запроса:
-```json
-{
-  "device_id": "device_001",
-  "data": "36.6"
-}
-```
+- Tkinter
+- HTML
 
 ## Установка и запуск
 
