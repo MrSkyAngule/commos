@@ -1,11 +1,33 @@
+
 <head>
     <title>Commos</title>
 </head>
 <h1>Ваши сообщения</h1>
-<ul>
+<ul id="commo-list">
     {% for commo in commos %}
         <li>{{ commo.data }} Times: {{ commo.created_at }}
             Автор: {{ commo.device_id }}
         </li>
     {% endfor %}
 </ul>
+
+<script>
+    // Подключаемся к вашему SSE view
+    const eventSource = new EventSource("event/");
+
+    eventSource.onmessage = function(event) {
+        // Создаем новый элемент списка
+        const list = document.getElementById('commo-list');
+        const newElement = document.createElement('li');
+
+        // ВАЖНО: В Django view вы должны передавать данные в удобном формате (строка или JSON)
+        newElement.innerHTML = event.data;
+
+        // Добавляем в начало списка
+        list.prepend(newElement);
+    };
+
+    eventSource.onerror = function() {
+        console.log("Ошибка или соединение разорвано. Переподключение...");
+    };
+</script>
