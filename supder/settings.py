@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'web_apps',
     'apis',
 
+
     #moduls
     'rest_framework',
 ]
