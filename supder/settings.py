@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+=%dxivg!os4bn=&)#qxxdnh@8gm05g^+jl!hfkxt_h@9sqfs#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,6 +87,8 @@ WSGI_APPLICATION = 'supder.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'TEST': {
+            'ENGINE': 'django.db.backends.sqlite3', },
         'NAME': 'onigiri',
         'USER': 'hilok',
         'PASSWORD': 'loki',
